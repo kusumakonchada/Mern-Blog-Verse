@@ -3,8 +3,15 @@ import {Link} from "react-router-dom"
 import { Mail } from 'lucide-react';
 import { Lock } from 'lucide-react';
 import { LogIn } from 'lucide-react';
+import { Eye } from 'lucide-react';
+import { EyeOff } from 'lucide-react';
+import { useState } from "react";
 
 const Format = () => {
+    const[showPassword,setShowPassword]=useState(false);
+     const handlePassword = () => {
+        setShowPassword((password) => !password)
+    }
     return (
         <div className="flex items-center flex-col gap-5 ">
             <NavBar/>
@@ -24,8 +31,9 @@ const Format = () => {
                     <div className="flex flex-col w-[90%] gap-2">
                         <p className="text-md font-semibold text-gray-600">Password</p>
                         <div className="relative">
-                        <input type="text" placeHolder="Sample-123" className="border-1 pl-12 border-gray-300 items-center w-full py-4 px-3 rounded-xl focus:outline-none focus:border-blue-600" />
+                        <input type={showPassword ? "text" : "password"} placeHolder="Sample-123" className="border-1 pl-12 border-gray-300 items-center w-full py-4 px-3 rounded-xl focus:outline-none focus:border-blue-600" />
                   <Lock className="absolute left-3 top-4 text-gray-300"/>
+                  <p onClick={handlePassword}>{showPassword ? <Eye className="absolute right-3 top-4" /> : <EyeOff className="absolute right-3 top-4" />}</p>
                    </div> </div>
                     <div className="flex gap-1  py-4">
                         <input type="Checkbox" name="" id="" className="h-5 w-5" />
@@ -34,8 +42,9 @@ const Format = () => {
                         <button className="text-blue-600 font-semibold">Forgot Password?</button>
                         </div>
                         </div>
-                        <div>
+                        <div className="relative">
                         <button className="text-white font-semibold bg-blue-500 w-full h-13 rounded-2xl">Sign In</button>
+                        <LogIn className="absolute left-20 top-4 text-white "/>
                         </div>
                         <div className="border-[0.5px] border-gray-400 w-[100%] mt-5"></div>
                         <div className="flex mt-5">

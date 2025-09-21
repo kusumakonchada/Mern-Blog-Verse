@@ -101,9 +101,9 @@ const SignUP = () => {
         <div className="flex items-center flex-col mt-10 gap-4">
             <NavBar />
             <h1 className="text-2xl font-bold text-blue-700">Join BlogVerse</h1>
-            <p className="text-2xl text-gray text-center">Create your account and <br />start your Blogging journey today</p>
-            <form onSubmit={handleSubmit} className="flex flex-col border-1 border-black w-1/3 py-7 items-center gap-5 rounded-xl">
-                <div className="w-[90%] flex flex-col gap-2">
+            <p className="lg:text-2xl md:text-xl text-md text-gray text-center">Create your account and <br />start your Blogging journey today</p>
+            <form onSubmit={handleSubmit} className="flex flex-col border-1 border-black lg:w-1/3 lg:py-7 w[70%] py-0 md:w[60%] md:py-1 items-center gap-5 rounded-xl">
+                <div className=" w-[90%] flex flex-col gap-2">
                     <p className="text-md text-gray-700 font-semibold">Full Name</p>
                     <div className="relative">
                         <input value={formData.fullName} onChange={handleChange} name="fullName" type="text" placeholder="enter your Full Name" className="border-1 pl-12 border-gray-700 w-full items-center py-4 px-3 rounded-2xl focus:outline-none focus:border-purple-500" />
@@ -151,7 +151,7 @@ const SignUP = () => {
                 {error && <p className="text-red-500">{error}</p>}
                 {success && <p className="text-green-500">{success}</p>}
                 <button type="submit" className="w-[90%] flex justify-center gap-3 bg-purple-600 py-4 text-white rounded-xl  font-semibold"> <CircleUserRound className="text-gray-300" /><p>Create Account</p></button>
-                <div className="border-[0.5px] border-gray-400 w-[90%] mt-4">
+                <div className="border-[0.5px] border-gray-400 w-[90%] sm-w[50%] lg:w-1/3 mt-4">
                 </div>
                 <p className="text-gray-500 font-semibold">Already Have An Account?<Link to="/Format" className="text-purple-500">Sign In here</Link></p>
                 <Link to="/" className="text-gray-700 py-4 w-[90%] font-semibold rounded-xl hover:text-gray-200 cursor-pointer text-center">Back to Home</Link>

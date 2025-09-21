@@ -15,7 +15,7 @@ const Format = () => {
     return (
         <div className="flex items-center flex-col gap-5 ">
             <NavBar/>
-            <form className="flex flex-col items-center border-1  bg-white border-gray-200 w-1/5 py-7 gap-5 mt-50   rounded-2xl shadow-2xl">
+            <form className="flex flex-col items-center border-1  bg-white border-gray-200 w-[90%] lg:w-[30%] md:w-[50%] py-7 gap-5 mt-50   rounded-2xl shadow-2xl">
                 <div>
                     
                     <h2 className="font-bold text-2xl  text-center mt-5 ">SignIn</h2>
@@ -24,14 +24,14 @@ const Format = () => {
                     <div className="flex flex-col w-[90%] gap-2">
                         <p className="text-md font-semibold text-gray-600">Email address</p>
                         <div className="relative">
-                        <input type="text" placeHolder="Sample@gmail.com" className="border-1 pl-12 border-gray-300 items-center w-full py-4 px-3 rounded-xl focus:outline-none focus:border-blue-600 focus:border-1.8 duration-200 "/>
+                        <input type="text" placeholder="Sample@gmail.com" className="border-1 pl-12 border-gray-300 items-center w-full py-4 px-3 rounded-xl focus:outline-none focus:border-blue-600 focus:border-1.8 duration-200 "/>
                  <Mail className="absolute left-3 top-4 text-gray-300"/>
                    </div>
                     </div>
                     <div className="flex flex-col w-[90%] gap-2">
                         <p className="text-md font-semibold text-gray-600">Password</p>
                         <div className="relative">
-                        <input type={showPassword ? "text" : "password"} placeHolder="Sample-123" className="border-1 pl-12 border-gray-300 items-center w-full py-4 px-3 rounded-xl focus:outline-none focus:border-blue-600" />
+                        <input type={showPassword ? "text" : "password"} placeholder="Sample-123" className="border-1 pl-12 border-gray-300 items-center w-full py-4 px-3 rounded-xl focus:outline-none focus:border-blue-600" />
                   <Lock className="absolute left-3 top-4 text-gray-300"/>
                   <p onClick={handlePassword}>{showPassword ? <Eye className="absolute right-3 top-4" /> : <EyeOff className="absolute right-3 top-4" />}</p>
                    </div> </div>
